@@ -1,0 +1,26 @@
+def find_frequency_difference(lst):
+    freq={}
+    for num in lst:
+        if num in freq:
+            freq[num] += 1
+        else:
+            freq[num] = 1
+max_num = None
+min_num = None
+for num in freq:
+    if max_num is None or freq[num] > freq[max_num]:
+        max_num = num
+    if min_num is None or freq[num] < freq[min_num]:
+        min_num = num
+print("max:", max_num)
+print("min:", min_num)
+difference = freq[max_num] - freq[min_num]
+print("difference:", difference)
+output:
+1 2 3 4 5 6 7 1 2 3 4 5 7 5 5 5
+max:
+6
+min:
+5
+diff:
+1
